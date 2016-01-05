@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    {% block head %}
+    <meta charset="UTF-8">
+    <title>Edward McEnrue - {% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="images/github_profile_pic.png">
+    {% endblock %}
+  </head>
+  <body>
+    <h1>Edward McEnrue</h1>
+    <p>Pokemon Trainer</p>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    <div id="footer">
+      {% block footer %}
+        &copy; Copyright 2008 by Edward McEnrue
+      {% endblock %}
+    </div>
+  </body>
+</html>
