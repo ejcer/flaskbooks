@@ -1,18 +1,19 @@
 import os
-from app import create_app
+from app import create_app, db
+from app.models import Post, Subscriber
 from flask.ext.script import Manager, Shell
-
-#TODO dont forget to go back and add/initialize your db dependencies/alchemy
+from flask.ext.migrate import Migrate, MigrateCommand
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 manager = Manager(app)
+migrate = Migrate(app, db)
 
 
 def make_shell_context():
-    return dict(app=app) #TODO will need to update this with db and models
+    return dict(app=app, db=db, Post=Post, Subscriber=Subscriber) #TODO will need to update this with db and models
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
-
+manager.add_command('db', MigrateCommand)
 
 
 if __name__ == "__main__":
