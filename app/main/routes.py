@@ -15,7 +15,7 @@ def contact():
     form = ContactForm()
     if form.validate_on_submit():
         app = current_app._get_current_object()
-        send_email(app.config['FLASKY_ADMIN'], \
+        send_email(app.config['ADMIN'], \
             'Assistance Request [edwardmcenrue.com]', \
             'email/contact_req', \
             name=form.name.data, \
