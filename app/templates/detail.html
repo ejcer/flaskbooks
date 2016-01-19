@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{post.title}}{% endblock %}
+{% block content %}
+  <header class="center">
+    <h3>{{post.title}}</h3>
+    <p>{{ moment(post.timestamp).fromNow() }}</p>
+    {% if session.logged_in %}
+      <li><a href="{{ url_for('.edit', slug=post.slug) }}">Edit Entry</a></li>
+    {% endif %}
+  </header>
+  {{ post.html_content }}
+{% endblock %}

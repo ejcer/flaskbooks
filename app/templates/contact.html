@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
 {% block content %}
-  <h1>Contact</h1>
+  <h1>Hire Me!</h1>
+  <em>I can't wait to help you build your product in the right way.</em>
   <form method="POST">
-    {{ form.csrf_token }} 
-    {{ form.name.label }} {{ form.name() }}
-    {{ form.email.label }} {{ form.email() }}
-    {{ form.contact_req.label }} {{ form.contact_req() }}
-    {{ form.submit.label }}{{ form.submit() }}
+    {{ form.csrf_token }}
+    <h5>{{ form.name.label }}</h5>
+    {{ form.name() }}
+    <h5>{{ form.email.label }}</h5>
+    {{ form.email() }}
+    <h5>{{ form.contact_req.label }}</h5>
+    {{ form.contact_req() }}
+    <br>
+    {{ form.submit() }}
   </form>
 {% endblock %}

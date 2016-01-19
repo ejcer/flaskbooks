@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Articles{% endblock %}
+{% block content %}
+  <h3>Blog Entries</h3>
+  <ul>
+    {% for post in posts %}
+      <div class="post border-top border-bottom">
+        <header>
+          <a href="
+            {% if post.published %}
+              {{ url_for('.detail', slug=post.slug) }}
+            {% else %}
+              {{ url_for('.edit', slug=post.slug) }}{% endif %}">
+            <h3>{{post.title}}</h3>
+          </a>
+          <p>{{ moment(post.timestamp).fromNow() }}</p>
+        </header>
+      </div>
+    {% endfor %}
+  </ul>
+{% endblock %}

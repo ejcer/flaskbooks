@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+  <p>Hi! I'm a full stack developer studying computer science at Virginia Tech with a focus in machine learning and distributed systems. I currently run the
+    <a href="http://mandwdevclub.github.io/" target="_blank">
+      Mobile & Web App Development Club
+    </a>
+    and participate across many other organizations. Previously, I worked at
+    <a href="http://www.3m.com/" target="_blank">
+      3M</a>, the
+    <a href="http://www.nsf.gov/" target="_blank">
+      National Science Foundation</a>, and
+    <a href="http://www.rackspace.com/" target="_blank">
+      Rackspace</a>. This summer I will be starting at
+    <a href="https://www.coursera.org/" target="_blank">
+      Coursera</a>!
+  </p>
+
+  <section class="mb3">
+    <h3 class="sans-serif h5 caps regular">Projects</h3>
+    <ul>
+      <li>
+        <a href="https://github.com/hongjunChoi/SiliconHarlem" target="_blank">Silicon Harlem</a> Tracking tech companies in Harlem.</p>
+      </li>
+      <li>
+        <a href='http://mhacksv.challengepost.com/submissions/31886-hh-facebook-enhancement-suite' target="_blank">HH FES</a> Open Source platform for improving Facebook.</p>
+      </li>
+      <li>
+        <a href="http://mhacks-iv.challengepost.com/submissions/26128-noteworthy" target="_blank">Noteworthy</a> A fast note sharing ecosystem application.</p>
+      </li>
+      <li>
+        <a href="https://sites.google.com/a/vt.edu/amp_lab/" target="_blank">AMP lab</a> Built projects, mentored students, and coordinated research.</p>
+      </li>
+    </ul>
+  <p>
+    Using the business and engineering experience I obtained from the fantastic
+    experiences above, I can help you build your product, get you
+    customers, and grow your technical team. From designing to deployment, I
+    will work with you to create a scalable software solution that fits your
+    business's current and future needs.
+  </p>
+  <p>
+    Interested? Here's my
+    <a href="https://www.github.com/emcenrue" target="_blank">
+      Github
+    </a>
+    and my <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank">Résumé</a>,
+    <a href="{{ url_for('.contact') }}">
+      contact me.
+    </a>
+  </p>
+{% endblock %}

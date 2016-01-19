@@ -4,23 +4,40 @@
     {% block head %}
     <meta charset="UTF-8">
     <title>Edward McEnrue - {% block title %}{% endblock %}</title>
-    <link rel="icon" type="image/png" href="images/github_profile_pic.png">
+    {% block links %}{% endblock %}
+    <link href="https://d2v52k3cl9vedd.cloudfront.net/basscss/7.0.4/basscss.min.css" rel=stylesheet />
+    <link href="https://cloud.typography.com/6326032/647188/css/fonts.css" rel=stylesheet />
+
+    <!-- <link href="//stylesheets/app-52dea0e4.css" rel=stylesheet /> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" />
     {% endblock %}
   </head>
   <body>
-    <h1>Edward McEnrue</h1>
-    <p>Pokemon Trainer</p>
-    <div id="content">
-      {% block content %}{% endblock %}
-    </div>
-    <div id="footer">
-      {% block footer %}
-        &copy; Copyright 2008 by Edward McEnrue
+    <div class="container mxn2 px2 mt4">
+      <header class="center">
+        <h1 class="h1 caps m0">
+          <a class="btn black" href="{{ url_for('.index') }}">Edward McEnrue</a>
+        </h1>
+        <h2 class="h4 regular italic m0">Hacker Enthusiast</h2>
+      </header>
+      {% block navbar %}
+      <nav class="border-top border-bottom center mt3 clearfix mb3">
+        <a class="black btn caps" href="{{ url_for('.index')}}">Portfolio</a>
+        <a class="black btn caps" href="{{ url_for('.about') }}">About</a>
+        <a class="black btn caps" href="{{ url_for('.articles') }}">Articles</a>
+        <a class="black btn caps" href="{{ url_for('.contact') }}">Contact Me</a>
+      </nav>
       {% endblock %}
+      {% block content %}{% endblock %}
+      <footer class="container center mb4 mt2 clearfix">
+        {% block footer %}
+          <small class="center gray">&copy; 2015 Edward McEnrue</small>
+        {% endblock %}
+      </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/lib/bootstrap.min.js') }}"></script>
+
+    {{ moment.include_moment() }}
   </body>
 </html>
-
-{% block scripts %}
-{{ moment.include_moment() }}
-{% endblock %}

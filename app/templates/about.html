@@ -1,5 +1,45 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
+{% block title %}About Me{% endblock %}
 {% block content %}
-  <h1>Index</h1>
+  <article class="px2 container clearfix">
+    <figure class="center">
+      <img src="{{ url_for('static', filename='img/edwardphoto.jpg') }}">
+    </figure>
+    <p class="prose">
+      I'm a software engineer and a comedian. I like laughing at problems and
+      solving them too. These two things are my bread and butter.
+    </p>
+    <p>
+      I'm a motivator and a fitness nut. I am always striving to improve
+      myself mentally and physically.
+    </p>
+    <p>
+      I'm a hacker enthusiast. I love to try out and create new things
+      in the hopes of improving the world.
+    </p>
+    <p>
+      If you want someone on your team who has a keen eye for problems, a ton of
+      passion, and a deep understanding of software engineering,
+      <a href="{{ url_for('.contact') }}">
+        contact me.
+      </a>
+    </p>
+
+    <p>
+      Other Random Facts
+    </p>
+    <ul>
+      <li>
+        I
+        <a href="{{ url_for('.articles')}}">
+          write
+        </a> to teach others on leadership and technology
+
+      </li>
+      <li>
+        I enjoy reading sci fi (<a href="https://trello.com/b/pNBGpQJb/reading">suggestions please</a>)
+      </li>
+      <li>Soylent will eventually have 21 flavors.</li>
+    </ul>
+  </article>
 {% endblock %}

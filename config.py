@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
+    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_RECORD_QUERIES = True
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -15,6 +15,7 @@ class Config:
     MAIL_SENDER = 'Admin <testing4edward@gmail.com>'
     ADMIN = os.environ.get('ADMIN')
     SLOW_DB_QUERY_TIME=0.5
+    SITE_WIDTH = 800
 
     @staticmethod
     def init_app(app):
