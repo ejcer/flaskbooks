@@ -27,7 +27,7 @@ class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     #TODO change this back to 'DEV_DATABASE_URL' once stable
-    #TODO recreate 'DEV_DATABASE_URL' in the post activate file again 
+    #TODO recreate 'DEV_DATABASE_URL' in the post activate file again
 
 class TestingConfig(Config):
     TESTING = True
