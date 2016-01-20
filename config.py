@@ -16,6 +16,8 @@ class Config:
     ADMIN = os.environ.get('ADMIN')
     SLOW_DB_QUERY_TIME=0.5
     SITE_WIDTH = 800
+    DEBUG = False
+    WTF_CSRF_ENABLED = True
 
     @staticmethod
     def init_app(app):
@@ -23,7 +25,9 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    #TODO change this back to 'DEV_DATABASE_URL' once stable
+    #TODO recreate 'DEV_DATABASE_URL' in the post activate file again 
 
 class TestingConfig(Config):
     TESTING = True
@@ -31,6 +35,7 @@ class TestingConfig(Config):
     WTF_CSRF_ENABLED = False
 
 class ProductionConfig(Config):
+    DEBUG = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 
